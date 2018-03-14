@@ -1,13 +1,11 @@
-var scssInput = ['scss/style.scss'],
+var sassInput = ['sass/style.sass'],
     jsInput = [
-        'scripts/domain/*.js'
+        'js/*.js'
     ],
     vendorInput = [
-        'scripts/vendor/EasePack.min.js',
-        'scripts/vendor/rAF.js',
-        'scripts/vendor/TweenLite.min.js'
+        'js/vendor/*.js'
     ],
-    scssOutput = 'app/css',
+    sassOutput = 'app/css',
     jsOutput = 'app/scripts';
 
 // Start everything up.
@@ -25,12 +23,12 @@ var browserSync = require('browser-sync').create();
 // Watch SASS.
 gulp.task('sass', function() {
     return gulp
-        .src(scssInput)
+        .src(sassInput)
         .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(scssOutput))
+        .pipe(gulp.dest(sassOutput))
         .pipe(browserSync.reload({
             stream: true
         }))
@@ -65,7 +63,7 @@ gulp.task('browserSync', function() {
 })
 
 gulp.task('watch', ['sass', 'domainScripts', 'vendorScripts', 'browserSync'], function (){
-    gulp.watch('scss/**/*.scss', ['sass', browserSync.reload]);
-    gulp.watch('scripts/domain/**/*.js', ['domainScripts', browserSync.reload]);
-    gulp.watch('scripts/vendor/**/*.js', ['vendorScripts', browserSync.reload]);
+    gulp.watch('sass/**/*.sass', ['sass', browserSync.reload]);
+    gulp.watch('js/**/*.js', ['domainScripts', browserSync.reload]);
+    gulp.watch('js/**/*.js', ['vendorScripts', browserSync.reload]);
 });

@@ -1,7 +1,7 @@
 var t = document.querySelector('.toggleButton button#toggleNav');
 var n = document.getElementById('sideNavigation');
 
-t.addEventListener('click', (e)=>{
+t.addEventListener('click', (e)=>{ 
 
   if(t.getAttribute("data-toggle") == 0){
     t.setAttribute('data-toggle', '1');

@@ -67,3 +67,5 @@ gulp.task('watch', ['sass', 'domainScripts', 'vendorScripts', 'browserSync'], fu
     gulp.watch('js/**/*.js', ['domainScripts', browserSync.reload]);
     gulp.watch('js/**/*.js', ['vendorScripts', browserSync.reload]);
 });
+
+gulp.task('build', ['sass', 'domainScripts', 'vendorScripts']);

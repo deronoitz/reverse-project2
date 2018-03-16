@@ -3,7 +3,8 @@ function getRandomFloat(min, max) {
   return Math.random() * (max - min) + min;
 }
 var randomOpacity = (el)=>{
-  var randomNumber = getRandomFloat(.35, .50);
+  var randomNumber = getRandomFloat(0.1, .50);
+  // var randomNumber = getRandomFloat(.35, .50);
   TweenLite.to(el, .1, {css:{opacity: randomNumber}, ease:Power2.easeInOut});
 
 }

@@ -1,4 +1,4 @@
-var bgWrapper = document.querySelector('.bg-wrapper img');
+var bgWrapper = $('.indexPage .bg-wrapper img');
 function getRandomFloat(min, max) {
   return Math.random() * (max - min) + min;
 }
@@ -13,6 +13,8 @@ var randomOpacity = (el)=>{
 
 $(document).ready(function(){
   $('.indexPage .bg-wrapper').parallax();
+  $('.characterPage .bg-wrapper').parallax();
+
   new TypeIt('#indexType', {
     strings: ["Have we been here? Have we met before? I don’t know",
     "Right now maybe our future self watching over us through memories",

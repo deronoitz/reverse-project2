@@ -68,6 +68,7 @@
   100%
     background-position: 0 0
 
+
 .bg-wrapper
   position: absolute
   z-index: -1
@@ -155,6 +156,12 @@
     max-width: 700px
     margin: 0 auto
     margin-top: 60px
+    li
+      img
+        transition: transform .1s ease
+      &:hover
+        img
+          transform: scale(1.05)
     h5
       color: #000
       font-family: $title-font
@@ -186,3 +193,17 @@
   .head p
     max-width: 700px
     text-align: center
+.asd
+  // -webkit-animation: bounceEl 0.3s linear 0s infinite
+  animation-name: bouceEl
+  animation-duration: 1s
+  -webkit-animation-fill-mode: both
+  animation-fill-mode: both
+  animation-iteration-count: infinite
+@keyframes bouceEl
+  0%
+    transform: translateY(0px)
+  50%
+    transform: translateY(-20px)
+  100%
+    transform: translateY(0px)

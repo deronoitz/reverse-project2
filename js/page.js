@@ -9,7 +9,29 @@ var randomOpacity = (el)=>{
 
 }
 
+var liCharaPage = $('.characterPage ul.group li');
 
+var jumpEl = function(el){
+ el.addClass('asd');
+}
+
+liCharaPage.on('mouseover', function(e){
+  TweenLite.to(liCharaPage, .2, {css:{opacity: .4}, ease:Power2.easeInOut});
+  TweenLite.to($(this), .4, {css:{opacity: 1}, ease:Power2.easeInOut});
+
+});
+
+liCharaPage.on('mouseleave', function(e){
+  TweenLite.to(liCharaPage, .2, {css:{opacity: 1}, ease:Power2.easeInOut});
+});
+
+liCharaPage.on('click', function(){
+  jumpEl($(this).find('img'));
+  TweenLite.to(liCharaPage, .2, {css:{opacity: .4}, ease:Power2.easeInOut});
+  TweenLite.to($(this), .4, {css:{opacity: 1}, ease:Power2.easeInOut});
+  
+
+})
 
 $(document).ready(function(){
   $('.indexPage .bg-wrapper').parallax();
